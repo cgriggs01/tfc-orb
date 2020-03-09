@@ -82,7 +82,7 @@ steps:
           --header "Content-Type: application/vnd.api+json" \
           --request POST \
           --data @payload.json \
-          "<< parameter.endpoint >>"/api/v2/workspaces/"<< parameters.workspace_id >>"/configuration-versions
+          "<< parameter.endpoint >>"/api/v2/workspaces/<< parameters.workspace_id >>/configuration-versions
 
         
         upload_url=$(echo "$config_version" | jq -r '.data.attributes."upload-url"')
@@ -96,8 +96,8 @@ steps:
       name: Upload a Configuration File
       shell: /bin/bash
       command: |
-          
-      curl --silent \
+
+        curl --silent \
           --header "Content-Type: application/octet-stream" \
           --request PUT \
           --data-binary @packaged_config.tar.gz \

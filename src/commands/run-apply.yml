@@ -22,7 +22,7 @@ parameters:
     default: false
 
   configuration-version:
-    description: 	Specifies the `configuration` version to use for this run. If the configuration-version object is omitted, the run will be created using the workspace's latest configuration version.
+    description: Specifies the `configuration` version to use for this run. If the configuration-version object is omitted, the run will be created using the workspace's latest configuration version.
     type: string
     default: ""
 
